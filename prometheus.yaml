@@ -1,0 +1,23 @@
+global:
+  scrape_interval: 15s   # interval default scraping metrics
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Scrape Prometheus itu sendiri
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Scrape Node Exporter (contoh 1 server target)
+  - job_name: 'node_exporter'
+    static_configs:
+    # If you use Docker Compose, enter the container name
+      - targets: ['node_exporter:9100']   
+
+  # Scrape some other servers
+  # - job_name: 'my_servers'
+  #   static_configs:
+  #     - targets:
+  #         - '192.168.1.101:9100'
+  #         - '192.168.1.102:9100'
+  #         - 'mydomain.com:9100'

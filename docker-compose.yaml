@@ -1,0 +1,43 @@
+
+services:
+  prometheus:
+  # image from here https://hub.docker.com/r/prom/prometheus
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER= admin
+      - GF_SECURITY_ADMIN_PASSWORD= P@ssw0rd123!!!
+    volumes:
+      - grafana-storage:/var/lib/grafana
+
+  node_exporter:
+    # image from here: https://hub.docker.com/r/prom/node-exporter
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    ports:
+      - "9100:9100"
+    restart: unless-stopped
+
+volumes:
+  grafana-storage:
+networks:
+  monitoring:
+
+
+
+#Docker ✅ restart policy: unless-stopped
+# Other restart policy options:
+# - no -> no automatic restart
+# - always -> restarts even if stopped manually
+# - unless-stopped -> restarts unless stopped manually
+# - on-failure -> restarts only if exit code != 0
