@@ -15,8 +15,10 @@ Clone this repository and start the stack with Docker Compose:
 docker-compose up -d
 
 📊 Access
-Grafana
-URL: http://localhost:3000
+
+```bash
+docker-compose up -d
+
 Username: admin
 Password: P@ssw0rd123!!!
 
