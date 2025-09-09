@@ -13,14 +13,14 @@ Clone this repository and start the stack with Docker Compose:
 
 ```bash
 docker-compose up -d
-
+```
 📊 Access
-
-docker-compose up -d
-
 Username: admin
 Password: P@ssw0rd123!!!
-
+```bash
+URL: http://localhost:3000
+```
 Prometheus
+```bash
 URL: http://localhost:9090
-
+```
