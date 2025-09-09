@@ -16,7 +16,6 @@ docker-compose up -d
 
 📊 Access
 
-```bash
 docker-compose up -d
 
 Username: admin
