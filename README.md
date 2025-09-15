@@ -52,11 +52,11 @@ Choose one of the following options:
 Upload a JSON file
 Paste Dashboard ID (1860)
 Paste JSON directly
-![Add data source](images/import-template.png)
+![Import template](images/import-template.png)
 
 5. ✅ Result
 If the configuration is successful, Grafana will display system metrics from Node Exporter:
-![Add data source](images/result-monitoring.png)
+![Result monitoring](images/result-monitoring.png)
 
 
 
